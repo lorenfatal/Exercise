@@ -1,0 +1,26 @@
+salary = int(input("What is your salary? "))
+
+first_taxes = (10*6310) / 100
+second_taxes = (14*(9050-6310)) / 100
+third_taxes = (20*(14530-9050)) / 100
+fourth_taxes = (31*(20200-14530)) / 100
+fifth_taxes = (35*(42030-20200)) / 100
+sixth_taxes = (47*(54130-42030)) / 100
+seventh_taxes = (50*(salary-54130)) / 100
+
+if salary <= 6310:
+    payment = (10*salary)/100
+elif salary <= 9050:
+    payment = first_taxes + ((14*(salary-6310)) / 100)
+elif salary <= 14530:
+    payment = first_taxes + second_taxes + ((20*(salary-9050)) / 100)
+elif salary <= 20200:
+    payment = first_taxes + second_taxes + third_taxes + ((31*(salary-14530)) / 100)
+elif salary <= 42030:
+    payment = first_taxes + second_taxes + third_taxes + fourth_taxes + (35*(salary-20200)) / 100
+elif salary <= 54130:
+    payment = first_taxes + second_taxes + third_taxes + fourth_taxes + fifth_taxes + (47*(salary-42030)) / 100
+elif salary > 54130:
+    payment = first_taxes + second_taxes + third_taxes + fourth_taxes + fifth_taxes + sixth_taxes + seventh_taxes
+
+print("Taxes: " + str(payment) + " nis")
