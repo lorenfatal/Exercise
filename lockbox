@@ -1,0 +1,30 @@
+def open_lockbox(password):
+    count = 0
+    if "4" in password:
+        count = count + 1
+    if "8" in password:
+        count = count + 1
+    if "1" in password:
+        count = count + 1
+    if "2" in password:
+        count = count + 1
+    return count
+
+first_try = input("Enter password (four digits): ")
+if first_try == "4812":
+    print("The lockbox was successfully opened!")
+elif first_try != "4812":
+    print(str(open_lockbox(first_try)) + " / 4 digits match the original code.")
+
+second_try = input("Try again: ")
+if second_try == "4812":
+    print("The lockbox was successfully opened!")
+elif second_try != "4812":
+    print(str(open_lockbox(second_try)) + " / 4 digits match the original code.")
+
+third_try = input("Try again: ")
+if third_try == "4812":
+    print("The lockbox was successfully opened!")
+elif third_try != "4812":
+    print(str(open_lockbox(third_try)) + " / 4 digits match the original code.")
+    print("The alarm was activated.")
